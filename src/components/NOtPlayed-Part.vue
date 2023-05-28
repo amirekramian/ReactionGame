@@ -1,5 +1,5 @@
 <template>
-  <div class="blockNot">Click Me</div>
+  <div class="blockNot">Click Area</div>
 </template>
 
 <script>
