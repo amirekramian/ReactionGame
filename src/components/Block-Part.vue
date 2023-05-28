@@ -1,10 +1,11 @@
 <template>
-  <div class="block" v-if="showBlock" @click="StopTimer"> Click Me</div>
+  <div  class="block" v-if="showBlock" @click="StopTimer"> Click Me</div>
+
 </template>
 
 <script>
 export default {
-props:['delay'],
+props:['delay','IsPlaying'],
 data(){
     return{
         showBlock: false,
@@ -41,7 +42,7 @@ methods:{
 }
 </script>
 
-<style>
+<style scoped>
 .block{
     width: 400px;
     border-radius: 20px;
@@ -51,4 +52,5 @@ methods:{
     padding: 100px 0;
     margin: 40px auto;
 }
+
 </style>

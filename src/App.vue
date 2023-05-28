@@ -1,7 +1,9 @@
 <template>
 <h1>Reaction Timer</h1>
 <button :disabled="IsPlaying" @click="StartGame" class="btn btn-danger">Play</button>
-<Block v-if="IsPlaying" :delay="delay" @endtimer="endGame" />
+<p v-if="!IsPlaying">When you click on 'Play' button, apeare an area and you must click on it as soon as you can...</p>
+<Block v-if="IsPlaying" :delay="delay" :IsPlaying="IsPlaying" @endtimer="endGame" />
+<NOtPlayedDiv v-if="!IsPlaying" />
 <Result v-if="score !=null" :result="score" />
 </template>
 
@@ -10,14 +12,15 @@
 
 import Block from './components/Block-Part'
 import Result from './components/Result-Part'
-
+import NOtPlayedDiv from './components/NOtPlayed-Part'
 
 export default {
   name: 'App',
   components: {
     //HelloWorld
     Block,
-    Result
+    Result,
+    NOtPlayedDiv
   },
   data(){
 return{
